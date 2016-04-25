@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Rock
   - Saucer
+  - SpaceShipBullet
+  - SaucerBullet
   layers:
   - Default
   - TransparentFX

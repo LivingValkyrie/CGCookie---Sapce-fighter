@@ -14,7 +14,7 @@ GameObject:
   - 95: {fileID: 9597106}
   m_Layer: 0
   m_Name: saucer
-  m_TagString: Untagged
+  m_TagString: Saucer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -18,6 +18,7 @@ public class SpaceShip : MonoBehaviour {
 	public float speed = 1f;
 	public float turnSpeed = 1f;
 	public float fireRate = 0.5f;
+	public float respawnRate = 1f;
 
 	float accelRate = 0f;
 	Animator anim;
@@ -27,6 +28,7 @@ public class SpaceShip : MonoBehaviour {
 	float wrapPadding = 1f;
 	bool hit = false;
 	float nextFire;
+	GameObject gameManager;
 
 	#endregion
 
@@ -39,25 +41,6 @@ public class SpaceShip : MonoBehaviour {
 	}
 
 	void Update() {
-		float translation = Input.GetAxis("Vertical");
-		float rotation = Input.GetAxis("Horizontal");
-
-		if (rotation > 0) {
-			TurnRight(rotation);
-		} else if (rotation < 0) {
-			TurnLeft(rotation);
-		}
-
-		if (translation >= 0.5) {
-			Move(translation);
-		} else {
-			Idle();
-		}
-
-		if (Input.GetButton("Jump")) {
-			ShootBullet();
-		}
-
 		rb2D.AddForce(transform.up * (speed * accelRate));
 
 		Wrap();
@@ -77,7 +60,42 @@ public class SpaceShip : MonoBehaviour {
 		}
 	}
 
-	void ShootBullet() {
+	public void SetGameManager(GameObject gameManagerObject) {
+		gameManager = gameManagerObject;
+	}
+
+	public void SpaceShipHit() {
+		StartCoroutine(Hit());
+	}
+
+	public void OnTriggerEnter2D(Collider2D other) {
+		if (hit) { //...really
+			return;
+		}
+
+		if (other.tag == "Rock" || other.tag == "Saucer") {
+			StartCoroutine(Hit());
+		}
+	}
+
+	IEnumerator Hit() {
+		hit = true;
+		accelRate = 0;
+		anim.SetInteger("State", 4);
+		gameManager.GetComponent<GameManager>().UpdateLives(1);
+		yield return new WaitForSeconds(0.1f);
+
+		GetComponent<Renderer>().enabled = false;
+		GetComponent<Collider2D>().enabled = false;
+		yield return new WaitForSeconds(respawnRate);
+
+		GetComponent<Renderer>().enabled = true;
+		GetComponent<Collider2D>().enabled = true;
+		hit = false;
+		gameManager.GetComponent<GameManager>().ResetShip();
+	}
+
+	public void ShootBullet() {
 		if (hit) { //im so glad this is my last cgcookie
 			return;
 		}
@@ -89,7 +107,7 @@ public class SpaceShip : MonoBehaviour {
 		}
 	}
 
-	void Idle() {
+	public void Idle() {
 		if (hit) { //grrr
 			return;
 		}
@@ -99,7 +117,7 @@ public class SpaceShip : MonoBehaviour {
 		anim.SetInteger("State", 0);
 	}
 
-	void Move(float accel) {
+	public void Move(float accel) {
 		if (hit) { //SO FUCKING STUPID. JUST CHECK FOR HIT INSIDE OF THE DAMN UPDATE. 
 			return;
 		}
