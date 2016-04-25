@@ -1,0 +1,382 @@
+fileFormatVersion: 2
+guid: bd9d9e3e2d11008488605a2504fd96ab
+timeCreated: 1461616522
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Background
+    21300002: saucerExplode3
+    21300004: spaceShipThrust
+    21300006: rockBig
+    21300008: rockMedium
+    21300010: spaceShipExplode1
+    21300012: saucerExplode1
+    21300014: spaceShipShield
+    21300016: spaceShipShieldThrust
+    21300018: spaceShipExplode2
+    21300020: saucerExplode2
+    21300022: spaceShip
+    21300024: saucer
+    21300026: rockSmall
+    21300028: spaceShipBullet
+    21300030: saucerBullet
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    sprites:
+    - name: Background
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+        - {x: 128, y: 128}
+    - name: saucerExplode3
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 399
+        width: 149
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 72.5, y: 56.5}
+        - {x: -14.5, y: 56.5}
+        - {x: -39.5, y: 52.5}
+        - {x: -74.5, y: -3.5}
+        - {x: -74.5, y: -52.5}
+        - {x: -63.5, y: -56.5}
+        - {x: 3.5, y: -56.5}
+        - {x: 25.5, y: -49.5}
+        - {x: 74.5, y: 8.5}
+        - {x: 74.5, y: 53.5}
+    - name: spaceShipThrust
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 402
+        width: 99
+        height: 110
+      alignment: 9
+      pivot: {x: 0.4999997, y: 0.75893915}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -49.49997, y: 26.516693}
+        - {x: -49.49997, y: -59.483307}
+        - {x: -16.49997, y: -83.48331}
+        - {x: 5.5000305, y: -83.48331}
+        - {x: 49.50003, y: -31.483307}
+        - {x: 49.50003, y: 2.516693}
+        - {x: 43.50003, y: 26.516693}
+    - name: rockBig
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 254
+        width: 147
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.5, y: 71.5}
+        - {x: -54.5, y: 58.5}
+        - {x: -73.5, y: 16.5}
+        - {x: -73.5, y: -23.5}
+        - {x: -43.5, y: -71.5}
+        - {x: 55.5, y: -71.5}
+        - {x: 73.5, y: -7.5}
+        - {x: 73.5, y: 35.5}
+        - {x: 34.5, y: 71.5}
+    - name: rockMedium
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 319
+        width: 89
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.5, y: 40.5}
+        - {x: -25.5, y: 40.5}
+        - {x: -44.5, y: 33.5}
+        - {x: -44.5, y: -20.5}
+        - {x: -38.5, y: -40.5}
+        - {x: 29.5, y: -40.5}
+        - {x: 44.5, y: -10.5}
+        - {x: 44.5, y: 16.5}
+        - {x: 32.5, y: 35.5}
+    - name: spaceShipExplode1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 169
+        width: 145
+        height: 85
+      alignment: 9
+      pivot: {x: 0.49884653, y: 0.687093}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -71.33275, y: 26.597092}
+        - {x: -72.33275, y: 25.597092}
+        - {x: -72.33275, y: -56.40291}
+        - {x: -67.33275, y: -58.40291}
+        - {x: 53.66725, y: -58.40291}
+        - {x: 72.66725, y: -31.402908}
+        - {x: 72.66725, y: -2.4029083}
+        - {x: 65.66725, y: 26.597092}
+    - name: saucerExplode1
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 156
+        width: 92
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 45.5}
+        - {x: -46, y: 37.5}
+        - {x: -46, y: -26.5}
+        - {x: -27, y: -45.5}
+        - {x: 28, y: -45.5}
+        - {x: 46, y: -25.5}
+        - {x: 46, y: 31.5}
+        - {x: 35, y: 45.5}
+    - name: spaceShipShield
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 126
+        width: 131
+        height: 126
+      alignment: 9
+      pivot: {x: 0.49877813, y: 0.5838318}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50.339935, y: 52.437195}
+        - {x: -65.339935, y: 46.437195}
+        - {x: -65.339935, y: -45.562805}
+        - {x: -40.339935, y: -73.562805}
+        - {x: 26.660065, y: -73.562805}
+        - {x: 65.660065, y: -55.562805}
+        - {x: 65.660065, y: 37.437195}
+        - {x: 56.660065, y: 52.437195}
+    - name: spaceShipShieldThrust
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 116
+        width: 131
+        height: 136
+      alignment: 9
+      pivot: {x: 0.49877837, y: 0.61414796}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -65.339966, y: -48.524124}
+        - {x: -34.339966, y: -83.524124}
+        - {x: 43.660034, y: -83.524124}
+        - {x: 65.660034, y: -69.524124}
+        - {x: 65.660034, y: 26.475876}
+        - {x: 45.660034, y: 52.475876}
+        - {x: -39.339966, y: 52.475876}
+        - {x: -65.339966, y: 17.475876}
+    - name: spaceShipExplode2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 82
+        width: 187
+        height: 81
+      alignment: 9
+      pivot: {x: 0.5000001, y: 0.722378}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.500023, y: 18.487381}
+        - {x: -27.500023, y: -45.51262}
+        - {x: -27.500023, y: -56.51262}
+        - {x: -16.500023, y: -58.51262}
+        - {x: 22.499977, y: -58.51262}
+        - {x: 26.499977, y: -55.51262}
+        - {x: 26.499977, y: -32.51262}
+        - {x: 14.499977, y: 18.487381}
+      - - {x: -81.50002, y: 21.487381}
+        - {x: -93.50002, y: 21.487381}
+        - {x: -93.50002, y: -30.512619}
+        - {x: -58.500023, y: -53.51262}
+        - {x: -53.500023, y: -53.51262}
+        - {x: -38.500023, y: -49.51262}
+        - {x: -35.500023, y: -44.51262}
+        - {x: -35.500023, y: -39.51262}
+        - {x: -59.500023, y: 10.487381}
+      - - {x: 47.499977, y: 22.487381}
+        - {x: 32.499977, y: -27.512619}
+        - {x: 32.499977, y: -46.51262}
+        - {x: 40.499977, y: -48.51262}
+        - {x: 59.499977, y: -48.51262}
+        - {x: 91.49998, y: -28.512619}
+        - {x: 93.49998, y: -20.512619}
+        - {x: 93.49998, y: 22.487381}
+    - name: saucerExplode2
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 41
+        width: 113
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28.5, y: 45.5}
+        - {x: -26.5, y: 45.5}
+        - {x: -56.5, y: 11.5}
+        - {x: -56.5, y: -39.5}
+        - {x: -37.5, y: -45.5}
+        - {x: 39.5, y: -45.5}
+        - {x: 48.5, y: -31.5}
+        - {x: 56.5, y: -2.5}
+        - {x: 56.5, y: 30.5}
+    - name: spaceShip
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 29
+        width: 99
+        height: 85
+      alignment: 9
+      pivot: {x: 0.4999997, y: 0.6870107}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -49.49997, y: -31.395905}
+        - {x: -33.49997, y: -58.395905}
+        - {x: 25.50003, y: -58.395905}
+        - {x: 49.50003, y: -43.395905}
+        - {x: 49.50003, y: 9.604095}
+        - {x: 38.50003, y: 26.604095}
+        - {x: -46.49997, y: 26.604095}
+        - {x: -49.49997, y: 6.6040955}
+    - name: saucer
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 23
+        width: 91
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27.5, y: 45.5}
+        - {x: -45.5, y: 29.5}
+        - {x: -45.5, y: -42.5}
+        - {x: -33.5, y: -45.5}
+        - {x: 32.5, y: -45.5}
+        - {x: 45.5, y: -31.5}
+        - {x: 45.5, y: 27.5}
+        - {x: 25.5, y: 45.5}
+    - name: rockSmall
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 39
+        width: 43
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.5, y: 21}
+        - {x: -21.5, y: 10}
+        - {x: -21.5, y: -21}
+        - {x: 12.5, y: -21}
+        - {x: 21.5, y: -12}
+        - {x: 21.5, y: 17}
+        - {x: 19.5, y: 21}
+    - name: spaceShipBullet
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 26
+        width: 13
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: saucerBullet
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 26
+        width: 13
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
