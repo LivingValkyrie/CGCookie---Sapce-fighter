@@ -70,6 +70,10 @@ public class GameManager : MonoBehaviour {
 			player.GetComponent<SpaceShip>().ShootBullet();
 		}
 
+		if (Input.GetButton("Fire1")) {
+			player.GetComponent<SpaceShip>().Warp();
+		}
+
 		GameObject[] rocks = GameObject.FindGameObjectsWithTag("Rock");
 		if (rocks.Length <= 0) {
 			for (int i = 0; i < numStartingRocks; i++) {

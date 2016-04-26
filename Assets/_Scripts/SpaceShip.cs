@@ -19,6 +19,8 @@ public class SpaceShip : MonoBehaviour {
 	public float turnSpeed = 1f;
 	public float fireRate = 0.5f;
 	public float respawnRate = 1f;
+	public float warpCoolDown = 0.5f;
+	public float shieldTime = 3f;
 
 	float accelRate = 0f;
 	Animator anim;
@@ -29,6 +31,8 @@ public class SpaceShip : MonoBehaviour {
 	bool hit = false;
 	float nextFire;
 	GameObject gameManager;
+	float nextWarp;
+	bool shielded = true;
 
 	#endregion
 
@@ -38,6 +42,8 @@ public class SpaceShip : MonoBehaviour {
 
 		screenSW = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, Camera.main.transform.localPosition.z));
 		screenNE = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.localPosition.z));
+
+		StartCoroutine(ShieldActive());
 	}
 
 	void Update() {
@@ -69,12 +75,27 @@ public class SpaceShip : MonoBehaviour {
 	}
 
 	public void OnTriggerEnter2D(Collider2D other) {
-		if (hit) { //...really
+		if (hit || shielded) { //...really
 			return;
 		}
 
 		if (other.tag == "Rock" || other.tag == "Saucer") {
 			StartCoroutine(Hit());
+		}
+	}
+
+	public void Warp() {
+		if (hit) {
+			return;
+		}
+
+		if (Time.time > nextWarp) {
+			nextWarp = Time.time + warpCoolDown;
+
+			float newXpos = Random.Range(screenSW.x, screenNE.x);
+			float newYpos = Random.Range(screenSW.y, screenNE.y);
+
+			transform.localPosition = new Vector3(newXpos, newYpos, 0);
 		}
 	}
 
@@ -93,6 +114,17 @@ public class SpaceShip : MonoBehaviour {
 		GetComponent<Collider2D>().enabled = true;
 		hit = false;
 		gameManager.GetComponent<GameManager>().ResetShip();
+		StartCoroutine(ShieldActive());
+	}
+
+	IEnumerator ShieldActive() {
+		shielded = true;
+		anim.SetInteger("State", 2);
+
+		yield return new WaitForSeconds(shieldTime);
+
+		shielded = false;
+		anim.SetInteger("State", 0);
 	}
 
 	public void ShootBullet() {
@@ -114,7 +146,11 @@ public class SpaceShip : MonoBehaviour {
 
 		accelRate = accelRate * 0.5f;
 
-		anim.SetInteger("State", 0);
+		if ( shielded ) {
+			anim.SetInteger( "State", 2 );
+		} else {
+			anim.SetInteger( "State", 0 );
+		}
 	}
 
 	public void Move(float accel) {
@@ -124,7 +160,11 @@ public class SpaceShip : MonoBehaviour {
 
 		accelRate = accel;
 
-		anim.SetInteger("State", 1);
+		if (shielded) {
+			anim.SetInteger("State", 3);
+		} else {
+			anim.SetInteger("State", 1);
+		}
 	}
 
 	public void TurnRight(float rotation = 1) {
