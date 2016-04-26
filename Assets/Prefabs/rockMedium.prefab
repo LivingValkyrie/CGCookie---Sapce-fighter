@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21295686}
   - 58: {fileID: 5888958}
   - 50: {fileID: 5058684}
+  - 114: {fileID: 11406840}
   m_Layer: 0
   m_Name: rockMedium
   m_TagString: Rock
@@ -39,7 +40,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 152800}
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_IsKinematic: 0
@@ -61,6 +62,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.445
+--- !u!114 &11406840
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 152800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e8eedfa5a50d0d44931929dc38a6bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childRockPrefab: {fileID: 106826, guid: c8e1656ef972a6140a652cf12cb63e53, type: 2}
+  numChildRocks: 4
+  speed: 2
+  score: 200
 --- !u!212 &21295686
 SpriteRenderer:
   m_ObjectHideFlags: 1

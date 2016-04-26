@@ -44,14 +44,15 @@ public class Bullet : MonoBehaviour {
 		switch (type) {
 			case BulletType.SpaceShip:
 				if (other.tag == "Rock") {
+					other.GetComponent<Rock>().RockHit();
 					Destroy(gameObject);
-				} else if( other.tag == "Saucer" ) {
-					Destroy( gameObject );
+				} else if (other.tag == "Saucer") {
+					Destroy(gameObject);
 				}
 				break;
 			case BulletType.Saucer:
-				if ( other.tag == "Player" ) {
-					Destroy( gameObject );
+				if (other.tag == "Player") {
+					Destroy(gameObject);
 				}
 				break;
 		}
