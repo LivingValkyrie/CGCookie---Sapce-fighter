@@ -44,8 +44,8 @@ MonoBehaviour:
   saucerPrefab: {fileID: 156850, guid: 17840ff4a95646d4fa7c0fd64fbcb97c, type: 2}
   playerLives: 3
   score: 0
-  numStartingRocks: 0
-  saucerSpawnRate: 2
+  numStartingRocks: 4
+  saucerSpawnRate: 10
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

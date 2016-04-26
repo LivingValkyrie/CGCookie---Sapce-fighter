@@ -42,6 +42,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1846891581
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Rocks
+    uniqueID: 3314254667
+    locked: 0
+  - name: Bullets
+    uniqueID: 1236665453
+    locked: 0
+  - name: Saucers
+    uniqueID: 2789811055
+    locked: 0
+  - name: Player
+    uniqueID: 865698955
     locked: 0

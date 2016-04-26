@@ -95,7 +95,6 @@ MonoBehaviour:
   speed: 10
   maxFireWaitTime: 5
   score: 500
-  gameManager: {fileID: 0}
 --- !u!212 &21263588
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -120,7 +119,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1505156241
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300024, guid: bd9d9e3e2d11008488605a2504fd96ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

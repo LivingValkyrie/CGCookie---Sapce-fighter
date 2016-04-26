@@ -95,6 +95,7 @@ MonoBehaviour:
   speed: 20
   turnSpeed: 5
   fireRate: 0.1
+  respawnRate: 1
 --- !u!212 &21279172
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -119,7 +120,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 865698955
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300022, guid: bd9d9e3e2d11008488605a2504fd96ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
