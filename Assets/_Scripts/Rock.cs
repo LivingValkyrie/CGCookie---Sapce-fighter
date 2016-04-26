@@ -17,16 +17,20 @@ public class Rock : MonoBehaviour {
 	public float speed = 1f;
 	public int score;
 
+	public AudioClip hitSFX;
+
 	GameObject gameManager;
 	Rigidbody2D rb2D;
 	Vector3 screenSW;
 	Vector3 screenNE;
 	float wrapPadding = 1f;
+	AudioSource audioSource;
 
 	#endregion
 
 	void Start() {
 		rb2D = GetComponent<Rigidbody2D>();
+		audioSource = GetComponent<AudioSource>();
 
 		screenSW = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, Camera.main.transform.localPosition.z));
 		screenNE = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.localPosition.z));
@@ -69,6 +73,8 @@ public class Rock : MonoBehaviour {
 	}
 
 	IEnumerator DestroyRock() {
+		audioSource.PlayOneShot(hitSFX);
+
 		if (childRockPrefab != null) {
 			for (int i = 0; i < numChildRocks; i++) {
 				GameObject rockClone = Instantiate(childRockPrefab, transform.localPosition, Quaternion.identity) as GameObject;

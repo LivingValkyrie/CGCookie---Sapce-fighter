@@ -21,6 +21,10 @@ public class SpaceShip : MonoBehaviour {
 	public float respawnRate = 1f;
 	public float warpCoolDown = 0.5f;
 	public float shieldTime = 3f;
+	public AudioClip bulletSFX;
+	public AudioClip hitSFX;
+	public AudioClip shieldUpSFX;
+	public AudioClip shieldDownSFX;
 
 	float accelRate = 0f;
 	Animator anim;
@@ -33,12 +37,14 @@ public class SpaceShip : MonoBehaviour {
 	GameObject gameManager;
 	float nextWarp;
 	bool shielded = true;
+	AudioSource audioSource;
 
 	#endregion
 
 	void Start() {
 		anim = GetComponent<Animator>();
 		rb2D = GetComponent<Rigidbody2D>();
+		audioSource = GetComponent<AudioSource>();
 
 		screenSW = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, Camera.main.transform.localPosition.z));
 		screenNE = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.localPosition.z));
@@ -103,6 +109,7 @@ public class SpaceShip : MonoBehaviour {
 		hit = true;
 		accelRate = 0;
 		anim.SetInteger("State", 4);
+		audioSource.PlayOneShot( hitSFX );
 		gameManager.GetComponent<GameManager>().UpdateLives(1);
 		yield return new WaitForSeconds(0.1f);
 
@@ -120,11 +127,13 @@ public class SpaceShip : MonoBehaviour {
 	IEnumerator ShieldActive() {
 		shielded = true;
 		anim.SetInteger("State", 2);
+		audioSource.PlayOneShot( shieldUpSFX );
 
 		yield return new WaitForSeconds(shieldTime);
 
 		shielded = false;
 		anim.SetInteger("State", 0);
+		audioSource.PlayOneShot( shieldDownSFX );
 	}
 
 	public void ShootBullet() {
@@ -136,6 +145,7 @@ public class SpaceShip : MonoBehaviour {
 			nextFire = Time.time + fireRate;
 
 			Instantiate(bulletPrefab, transform.localPosition, transform.localRotation);
+			audioSource.PlayOneShot( bulletSFX );
 		}
 	}
 
