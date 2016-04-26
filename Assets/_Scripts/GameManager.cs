@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour {
 	public GameObject spaceShipPrefab;
 	public GameObject startingRockPrefab;
 	public GameObject saucerPrefab;
+	public GameObject gameUI;
+	public GameObject scoreText;
+	public GameObject livesText;
 
 	public int playerLives = 3;
 	public int score = 0;
@@ -27,6 +30,8 @@ public class GameManager : MonoBehaviour {
 	Vector3 screenNE;
 	Vector3 screenSE;
 	Vector3 screenNW;
+	int startingScore;
+	int startinglives;
 
 	#endregion
 
@@ -48,6 +53,11 @@ public class GameManager : MonoBehaviour {
 		}
 
 		StartCoroutine(SpawnSaucer());
+
+		startingScore = score;
+		startinglives = playerLives;
+		UpdateScore(0);
+		UpdateLives(0);
 	}
 
 	void Update() {
@@ -92,10 +102,12 @@ public class GameManager : MonoBehaviour {
 
 	public void UpdateScore(int scoreToAdd) {
 		score += scoreToAdd;
+		scoreText.GetComponent<GUIText>().text = "Score " + score;
 	}
 
 	public void UpdateLives(int livesLost = 1) {
 		playerLives -= livesLost;
+		livesText.GetComponent<GUIText>().text = "Lives " + playerLives;
 	}
 
 	IEnumerator SpawnSaucer() {
