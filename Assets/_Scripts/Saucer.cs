@@ -7,15 +7,20 @@ using System.Collections.Generic;
 /// Contact: Deadwynn@gmail.com
 /// Domain: www.livingvalkyrie.net
 /// 
-/// Description: Bullet 
+/// Description: Saucer 
 /// </summary>
-public class Bullet : MonoBehaviour {
+public class Saucer : MonoBehaviour {
 	#region Fields
 
-	public float speed = 1f;
-	public BulletType type;
+	public GameObject saucerBulletPrefab;
 
+	public float speed = 1f;
+	public float maxFireWaitTime = 5f;
+	public int score;
+
+	Animator anim;
 	Rigidbody2D rb2D;
+	GameObject gameManager;
 	Vector3 screenSW;
 	Vector3 screenNE;
 	float destroyPadding = 1f;
@@ -23,10 +28,15 @@ public class Bullet : MonoBehaviour {
 	#endregion
 
 	void Start() {
+		anim = GetComponent<Animator>();
 		rb2D = GetComponent<Rigidbody2D>();
 
 		screenSW = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, Camera.main.transform.localPosition.z));
 		screenNE = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.localPosition.z));
+
+		StartCoroutine(Attack());
+
+		anim.SetInteger("State", 0);
 	}
 
 	void Update() {
@@ -40,28 +50,34 @@ public class Bullet : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D other) {
-		switch (type) {
-			case BulletType.SpaceShip:
-				if (other.tag == "Rock") {
-					other.GetComponent<Rock>().RockHit();
-					Destroy(gameObject);
-				} else if (other.tag == "Saucer") {
-					other.GetComponent<Saucer>().SaucerHit();
-					Destroy(gameObject);
-				}
-				break;
-			case BulletType.Saucer:
-				if (other.tag == "Player") {
-					other.GetComponent<SpaceShip>().SpaceShipHit();
-					Destroy(gameObject);
-				}
-				break;
+	public void OnTriggerEnter2D(Collider2D other) {
+		if (other.tag == "Player") {
+			StartCoroutine(Hit());
 		}
 	}
-}
 
-public enum BulletType {
-	SpaceShip,
-	Saucer
+	public void SetGameManager(GameObject gameManagerObject) {
+		gameManager = gameManagerObject;
+	}
+
+	public void SaucerHit() {
+		StartCoroutine(Hit());
+	}
+
+	IEnumerator Hit() {
+		anim.SetInteger("State", 0);
+		gameManager.GetComponent<GameManager>().UpdateScore(score);
+		yield return new WaitForSeconds(0.3f);
+
+		Destroy(gameObject);
+	}
+
+	IEnumerator Attack() {
+		for (float timer = Random.Range(0, maxFireWaitTime); timer >= 0; timer -= Time.deltaTime) {
+			yield return null;
+		}
+
+		Instantiate(saucerBulletPrefab, transform.localPosition, transform.localRotation);
+	}
+
 }

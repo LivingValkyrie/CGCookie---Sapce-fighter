@@ -12,6 +12,7 @@ GameObject:
   - 58: {fileID: 5893580}
   - 50: {fileID: 5076422}
   - 95: {fileID: 9597106}
+  - 114: {fileID: 11418686}
   m_Layer: 0
   m_Name: saucer
   m_TagString: Saucer
@@ -39,8 +40,8 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 156850}
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
+  m_Mass: 5
+  m_LinearDrag: 0.5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_IsKinematic: 0
@@ -79,6 +80,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11418686
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eee1ac5edf55fe488124e42b786f3a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saucerBulletPrefab: {fileID: 138348, guid: d631d384b6d6e3d4fb35ce681a47c7d1, type: 2}
+  speed: 10
+  maxFireWaitTime: 5
+  score: 500
+  gameManager: {fileID: 0}
 --- !u!212 &21263588
 SpriteRenderer:
   m_ObjectHideFlags: 1
